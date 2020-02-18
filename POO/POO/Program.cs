@@ -8,8 +8,11 @@ namespace POO
         static void Main(string[] args)
         {
             var persona = new Persona() { FechaNacimiento = new DateTime(1980, 5, 8) };
-
             Console.WriteLine($"La edad de la persona es {persona.Edad}");
+
+            string text = null;
+            var resultado = text.ContarVocales();
+            Console.WriteLine($"La cantidad de vocales son: {resultado}");
 
 
         }
@@ -54,7 +57,8 @@ namespace POO
         public int Edad
             { get
                 {
-                    return UtilidadesFechas.CalcularEdad(FechaNacimiento); // clase estatica, por eso no se instancia
+                    return FechaNacimiento.CalcularEdad(); // un metodo de extension es una manera abreviada de invocar un metodo estatico  
+                   // return UtilidadesFechas.CalcularEdad(FechaNacimiento); // clase estatica, por eso no se instancia
                 }
 
             }
