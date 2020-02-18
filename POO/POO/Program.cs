@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace POO
 {
@@ -6,16 +7,12 @@ namespace POO
     {
         static void Main(string[] args)
         {
-            var persona1 = new Persona() { Nombre = "Juan" }; // una instancia de una clase es un tipo de referencia 
-            Console.WriteLine($"Nombre antes del cambio: {persona1.Nombre}");
-            cambiarNombre(persona1); //se hace el cambio por referencia
-            Console.WriteLine($"Nombre despues del cambio: {persona1.Nombre}");
+            var persona1 = new Persona();
+            persona1.Telefonos.Add("9845959345");
 
-            var numero = 5;// este tipo entero es un tipo de valor
-            //aumentar(numero); //debería cambiar, pero como es de tipo valor no se cambia
-            aumentar(ref numero); //para que se comporte como tipo de referencia, se le agrega ref
-
-            Console.WriteLine($"El número: {numero}"); // asi como está el valor no cambia, porque el valor no es por referencia, se envía una copia, no una referencia
+            //uso de segundo constructor
+            var persona2 = new Persona("Manuel", 1500); //ocupo el segundo constructor
+            persona2.Telefonos.Add("5675675995"); // es diferente porque en este no se inicializa list de telefonos
 
         }
 
@@ -33,6 +30,17 @@ namespace POO
 
     public class Persona
     {
+        public Persona() // constructor sin parametros, constructor por defecto
+        {
+            Console.WriteLine("soy una persona");
+            Telefonos = new List<string>();
+        }
+        //para usar la inicializacion de telefonos en el segundo constructor se agrega el this para llamar el contructor por defecto
+        public Persona(string nombre, decimal salarioMensual) : this()
+        {
+            Nombre = nombre;
+            SalarioMensual = salarioMensual;
+        }
         public string  Nombre{ get; set; }
         public decimal SalarioMensual { get; set; }
         public decimal SalarioAnual 
@@ -42,6 +50,7 @@ namespace POO
                 return SalarioMensual * 12;
             }
         }
+        public List<string> Telefonos { get; set; } // prop de tipo referencia, en el contructor se debe inicializar si se desea manipular
 
     }
 }
