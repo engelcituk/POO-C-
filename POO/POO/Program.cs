@@ -7,12 +7,9 @@ namespace POO
     {
         static void Main(string[] args)
         {
-            ProcesarRepositorio(new RepositorioPersonasDB());
-            ProcesarRepositorio(new RepositorioPersonasEnMemoria());
-            
-            // se usa el metodo diferente
-            var repositorio = ObtenerRepositorio(TipoRepositorio.Memoria);
-            ProcesarRepositorio(repositorio);
+            var persona = new Persona() { FechaNacimiento = new DateTime(1980, 5, 8) };
+
+            Console.WriteLine($"La edad de la persona es {persona.Edad}");
 
 
         }
@@ -39,20 +36,28 @@ namespace POO
 
         }
 
-        public class RepositorioPersonasBD
+        public class Persona
     {
-        public RepositorioPersonasBD() // constructor sin parametros, constructor por defecto
+        public Persona() // constructor sin parametros, constructor por defecto
         {
             Console.WriteLine("soy una persona");
             Telefonos = new List<string>();
         }
         //para usar la inicializacion de telefonos en el segundo constructor se agrega el this para llamar el contructor por defecto
-        public RepositorioPersonasBD(string nombre, decimal salarioMensual) : this()
+        public Persona(string nombre, decimal salarioMensual) : this()
         {
             Nombre = nombre;
             SalarioMensual = salarioMensual;
         }
         public string  Nombre{ get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        public int Edad
+            { get
+                {
+                    return UtilidadesFechas.CalcularEdad(FechaNacimiento); // clase estatica, por eso no se instancia
+                }
+
+            }
         public decimal SalarioMensual { get; set; }
         public decimal SalarioAnual 
         { 
