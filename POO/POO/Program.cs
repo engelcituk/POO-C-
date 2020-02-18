@@ -7,24 +7,47 @@ namespace POO
     {
         static void Main(string[] args)
         {
-            var persona1 = new Persona();
-            persona1.hablar(); // desde aqui se puede elegir que sobrecarga elegir
+            ProcesarRepositorio(new RepositorioPersonasDB());
+            ProcesarRepositorio(new RepositorioPersonasEnMemoria());
+            
+            // se usa el metodo diferente
+            var repositorio = ObtenerRepositorio(TipoRepositorio.Memoria);
+            ProcesarRepositorio(repositorio);
 
-          
+
+        }
+        public static void ProcesarRepositorio(IRepositorioPersonas repositorio)
+        {
+            repositorio.ObtenerPersonas();
         }
 
-        
-    }
+        //hacerlo mas dinamico, programar para la interfaz
+        enum TipoRepositorio { Memoria = 1, BD = 2}
 
-    public class Persona
+        // esto es un metodo para hacer dinamico el uso de la interfaz
+        static IRepositorioPersonas ObtenerRepositorio(TipoRepositorio tipoRepositorio)
+        {
+            switch (tipoRepositorio)
+            {
+                case TipoRepositorio.Memoria:
+                    return new RepositorioPersonasEnMemoria();                    
+                case TipoRepositorio.BD:
+                    return new RepositorioPersonasDB();
+                default:
+                    throw new NotImplementedException();
+            }
+
+        }
+
+        public class RepositorioPersonasBD
     {
-        public Persona() // constructor sin parametros, constructor por defecto
+        public RepositorioPersonasBD() // constructor sin parametros, constructor por defecto
         {
             Console.WriteLine("soy una persona");
             Telefonos = new List<string>();
         }
         //para usar la inicializacion de telefonos en el segundo constructor se agrega el this para llamar el contructor por defecto
-        public Persona(string nombre, decimal salarioMensual) : this()
+        public RepositorioPersonasBD(string nombre, decimal salarioMensual) : this()
         {
             Nombre = nombre;
             SalarioMensual = salarioMensual;
@@ -55,5 +78,6 @@ namespace POO
         {
 
         }
+    }
     }
 }
