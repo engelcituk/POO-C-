@@ -8,24 +8,12 @@ namespace POO
         static void Main(string[] args)
         {
             var persona1 = new Persona();
-            persona1.Telefonos.Add("9845959345");
+            persona1.hablar(); // desde aqui se puede elegir que sobrecarga elegir
 
-            //uso de segundo constructor
-            var persona2 = new Persona("Manuel", 1500); //ocupo el segundo constructor
-            persona2.Telefonos.Add("5675675995"); // es diferente porque en este no se inicializa list de telefonos
-
+          
         }
 
-        public static void cambiarNombre(Persona persona)
-        {
-            persona.Nombre = "Nuevo nombre";
-        }
         
-        // public static void aumentar( int numero) // no tiene ref
-        public static void aumentar(ref int numero) // con ref, para que se comporte como referencia
-        {
-            numero++;
-        }
     }
 
     public class Persona
@@ -51,6 +39,21 @@ namespace POO
             }
         }
         public List<string> Telefonos { get; set; } // prop de tipo referencia, en el contructor se debe inicializar si se desea manipular
+        /*
+        No se puede tener dos metodos iguales, a menos que estos tengan parametros diferentes
+        los metodos tienen signatura, osea se pueden diferenciar por su nombre y sus paramentros
+        */
+        public void hablar()
+        {
 
+        }
+        public void hablar(string mensaje) // al agregar un parametro que lo diferencie del otro metodo similar, significa que se esta sobrecargando el metodo
+        {
+
+        }
+        public void hablar(string mensaje, int numero) // el orden de los parametros tambien importa, porque pueden tener los mismos parametros, pero si estan en otro orden eso lo hace diferente a otro metodo similar
+        {
+
+        }
     }
 }
