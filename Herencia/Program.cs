@@ -22,6 +22,8 @@ namespace Herencia
             }
             var clasePublica = new ClasePublicaDePrueba(); //instancio una clase con una prop protected
            // clasePublica.propiedadProtegida = 5; // error porque Program no es una clase derivada de ClasePublicaDePrueba() 
+           // clasePublica.propiedadProtegidaInternal = "holaaaa; // error porque Program no es una clase derivada de ClasePublicaDePrueba() 
+
         }
     }
 
@@ -40,7 +42,7 @@ namespace Herencia
 
     /*
      * una clase abstracta no puede ser instanciada, y su proposito es servir de clase base para otras clases
-     */
+     */ 
     public abstract class Animal
     {
 
@@ -108,6 +110,7 @@ namespace Herencia
         public void Test()
         {
             propiedadProtegida = 9;
+            propiedadProtegidaInternal = "entro aqui"; // puedo acceder a esta propiedad (protected internal) porque la clase es derivada de ClasePublicaDePrueba
         }
     }
 
