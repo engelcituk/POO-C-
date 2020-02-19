@@ -6,23 +6,20 @@ namespace Herencia
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            DateTime dt = DateTime.Now; // Or whatever
-            string s = dt.ToString("yyyyMMddHHmmss");
-            var persona = new Persona();
-            persona.FechaCreacion = dt; //instancio persona, pero heredo las propiedades de  Entidad
-            Console.WriteLine($"La fecha de creación es {persona.FechaCreacion}");
+           // var perro = new Perro(); // se instancia perro
+            Animal perrito = new Perro(); // se instancia perro, es de tipo animal
+            /*como animal es una clase de tipo abstracto no se puede instanciar*/
+            perrito.HacerRuido();
+
+            ProcesarAnimal(perrito);
+            ProcesarAnimal(new Gato());
+            static void ProcesarAnimal(Animal animal)
+            {
+                animal.HacerRuido();
+            }
+
 
         }
-    }
-
-    public class Entidad
-    {
-        public int Id { get; set; }
-
-        public DateTime FechaCreacion { get; set; }
-
-        public DateTime FechaModificacion { get; set; }
     }
 
     public class Persona : Entidad // la clase hija es persona y entidad es la clase base, entidad le hereda a Persona
@@ -36,6 +33,34 @@ namespace Herencia
         public int Decripcion { get; set; }
 
         public decimal precio { get; set; }
+    }
+
+    /*
+     * una clase abstracta no puede ser instanciada, y su proposito es servir de clase base para otras clases
+     */
+    public abstract class Animal
+    {
+        
+        public abstract void HacerRuido(); /* en lugar de void se puede indicar el valor de salida(string..), y tambien los valores de entrada
+         */
+        /*un metodo abstracto solo se puede crear en una clase abstracta, pero no tiene implementacion, solo se implementa en las clases derivadas 
+         */
 
     }
+    public class Perro : Animal
+    {
+        public override void HacerRuido() // HacerRuido metodo abstracto implementado
+        {
+            Console.WriteLine("woof woof");
+        }
+    }
+    public class Gato : Animal
+    {
+        public override void HacerRuido() // HacerRuido metodo abstracto implementado
+        {
+            Console.WriteLine("miau miau");
+
+        }
+    }
+
 }
