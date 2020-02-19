@@ -1,0 +1,10 @@
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\bin\Debug\netcoreapp3.1\ModificadoresAcceso.exe
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\bin\Debug\netcoreapp3.1\ModificadoresAcceso.deps.json
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\bin\Debug\netcoreapp3.1\ModificadoresAcceso.runtimeconfig.json
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\bin\Debug\netcoreapp3.1\ModificadoresAcceso.runtimeconfig.dev.json
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\bin\Debug\netcoreapp3.1\ModificadoresAcceso.dll
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\bin\Debug\netcoreapp3.1\ModificadoresAcceso.pdb
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\obj\Debug\netcoreapp3.1\ModificadoresAcceso.AssemblyInfoInputs.cache
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\obj\Debug\netcoreapp3.1\ModificadoresAcceso.AssemblyInfo.cs
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\obj\Debug\netcoreapp3.1\ModificadoresAcceso.dll
+C:\Users\ecituc\Documents\POO\ModificadoresAcceso\obj\Debug\netcoreapp3.1\ModificadoresAcceso.pdb
