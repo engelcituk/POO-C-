@@ -7,12 +7,12 @@ namespace Herencia
         static void Main(string[] args)
         {
            // var perro = new Perro(); // se instancia perro
-            Animal perrito = new Perro(); // se instancia perro, es de tipo animal
+            Animal perrito = new Perro("String parametro"); // se instancia perro, es de tipo animal
             /*como animal es una clase de tipo abstracto no se puede instanciar*/
            // perrito.HacerRuido();
 
-            ProcesarAnimal(perrito);
-            ProcesarAnimal(new Gato());
+            //ProcesarAnimal(perrito);
+            //ProcesarAnimal(new Gato());
             static void ProcesarAnimal(Animal animal)
             {
                 animal.HacerRuido();
@@ -42,13 +42,22 @@ namespace Herencia
      */
     public abstract class Animal
     {
-        
+
+        public Animal()
+        {
+            Console.WriteLine("Constructor de la clase animal default");
+        }
+
+        public Animal(string parametro)
+        {
+            Console.WriteLine($"Constructor de la clase animal com parametro {parametro}");
+
+        }
+
         public abstract void HacerRuido(); /* en lugar de void se puede indicar el valor de salida(string..), y tambien los valores de entrada
          */
         /*un metodo abstracto solo se puede crear en una clase abstracta, pero no tiene implementacion, solo se implementa en las clases derivadas 
-         */
-
-        
+         */                 
         public virtual void comerCarne()
         {
             /* Un metodo virtual es aquel que puede ser sobrescrito por una clase derivada y que tiene implementación, en c# los metodos son "NO VIRTUALES".
@@ -60,6 +69,18 @@ namespace Herencia
     }
     public class Perro : Animal
     {
+        public Perro() // contructor que se ejecuta y la de la clase base
+        {
+            Console.WriteLine("Constructor de la clase perro");
+
+        }
+        /*
+         * Si quiero ejecutar el contructor de la clase Base
+         */
+        public Perro(string parametro) : base(parametro) //se pone base y elegir el contructor a usar, en este caso con parametros
+        {
+            Console.WriteLine("Constructor de la clase perro con parametro");
+        }
         public override void HacerRuido() // HacerRuido metodo abstracto implementado, se sobreescribe
         {
             Console.WriteLine("woof woof");
