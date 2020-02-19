@@ -111,6 +111,8 @@ namespace Herencia
         {
             propiedadProtegida = 9;
             propiedadProtegidaInternal = "entro aqui"; // puedo acceder a esta propiedad (protected internal) porque la clase es derivada de ClasePublicaDePrueba
+
+            // propiedadPrivateProtected = 567; //  No puedo acceder a esta propiedad private protected porque aunque estamos en una clase derivada, esta no está en el mismo proyecto
         }
     }
 
