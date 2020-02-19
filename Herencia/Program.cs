@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModificadoresAcceso;
+using System;
 
 namespace Herencia
 {
@@ -19,8 +20,8 @@ namespace Herencia
                 animal.comerCarne();
 
             }
-
-
+            var clasePublica = new ClasePublicaDePrueba(); //instancio una clase con una prop protected
+           // clasePublica.propiedadProtegida = 5; // error porque Program no es una clase derivada de ClasePublicaDePrueba() 
         }
     }
 
@@ -100,6 +101,14 @@ namespace Herencia
 
         }
         // comerCarne metodo virtual si es implementado en esta clase, pero no es sobrescrito
+    }
+
+    public class  ClaseDerivada: ClasePublicaDePrueba // clase derivada como ejemplo para acceder a una propiedad protected
+    {
+        public void Test()
+        {
+            propiedadProtegida = 9;
+        }
     }
 
 

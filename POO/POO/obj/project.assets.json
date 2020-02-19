@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "ModificadoresAcceso/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/ModificadoresAcceso.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModificadoresAcceso.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ModificadoresAcceso/1.0.0": {
+      "type": "project",
+      "path": "../../ModificadoresAcceso/ModificadoresAcceso.csproj",
+      "msbuildProject": "../../ModificadoresAcceso/ModificadoresAcceso.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "ModificadoresAcceso >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ecituc\\.nuget\\packages\\": {},
@@ -36,7 +55,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ecituc\\Documents\\POO\\ModificadoresAcceso\\ModificadoresAcceso.csproj": {
+              "projectPath": "C:\\Users\\ecituc\\Documents\\POO\\ModificadoresAcceso\\ModificadoresAcceso.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

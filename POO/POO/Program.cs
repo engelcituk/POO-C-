@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using ModificadoresAcceso;
+
 
 namespace POO
 {
@@ -14,7 +16,10 @@ namespace POO
             var resultado = text.ContarVocales();
             Console.WriteLine($"La cantidad de vocales son: {resultado}");
 
+            var cp = new ClasePublicaDePrueba(); // esta clase tiene una propiedad de tipo internal
+            cp.MetodoPublico(); // no puedo acceder a internal string propiedadInterna porque este no esta en este proyecto POO
 
+                       
         }
         public static void ProcesarRepositorio(IRepositorioPersonas repositorio)
         {
