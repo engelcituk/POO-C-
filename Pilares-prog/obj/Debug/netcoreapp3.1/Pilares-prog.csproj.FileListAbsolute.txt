@@ -1,0 +1,11 @@
+C:\Users\ecituc\Documents\POO\Pilares-prog\bin\Debug\netcoreapp3.1\Pilares-prog.exe
+C:\Users\ecituc\Documents\POO\Pilares-prog\bin\Debug\netcoreapp3.1\Pilares-prog.deps.json
+C:\Users\ecituc\Documents\POO\Pilares-prog\bin\Debug\netcoreapp3.1\Pilares-prog.runtimeconfig.json
+C:\Users\ecituc\Documents\POO\Pilares-prog\bin\Debug\netcoreapp3.1\Pilares-prog.runtimeconfig.dev.json
+C:\Users\ecituc\Documents\POO\Pilares-prog\bin\Debug\netcoreapp3.1\Pilares-prog.dll
+C:\Users\ecituc\Documents\POO\Pilares-prog\bin\Debug\netcoreapp3.1\Pilares-prog.pdb
+C:\Users\ecituc\Documents\POO\Pilares-prog\obj\Debug\netcoreapp3.1\Pilares-prog.csprojAssemblyReference.cache
+C:\Users\ecituc\Documents\POO\Pilares-prog\obj\Debug\netcoreapp3.1\Pilares-prog.AssemblyInfoInputs.cache
+C:\Users\ecituc\Documents\POO\Pilares-prog\obj\Debug\netcoreapp3.1\Pilares-prog.AssemblyInfo.cs
+C:\Users\ecituc\Documents\POO\Pilares-prog\obj\Debug\netcoreapp3.1\Pilares-prog.dll
+C:\Users\ecituc\Documents\POO\Pilares-prog\obj\Debug\netcoreapp3.1\Pilares-prog.pdb
