@@ -6,14 +6,25 @@ namespace Pilares_prog
     {
         static void Main(string[] args)
         {
-            var vector1 = new Vector(new int[] { 1, 6 });
-            var vector2 = new Vector(new int[] { 2, 5 });
+            //var vector1 = new Vector(new int[] { 1, 6 });
+            //var vector2 = new Vector(new int[] { 2, 5 });
 
-            var vectorSuma = vector1 + vector2;
+            //var vectorSuma = vector1 + vector2;
 
-            Console.WriteLine("La suma es" + vectorSuma);
+            //Console.WriteLine("La suma es" + vectorSuma);
+            ProcesarRepositorio(new RepositorioPersonasDB());
+            ProcesarRepositorio(new RepositorioPersonasEnMemoria());
+
+
+        }
+
+        /*Un método estático puede llamarse sin tener que crear un objeto de dicha clase*/
+        static void ProcesarRepositorio(IRepositorioPersonas repositorio)
+        {
+            repositorio.ObtenerPersonas();
         }
     }
+   
 
     public class Vector
     {
@@ -54,6 +65,29 @@ namespace Pilares_prog
             var vectorSuma = new Vector(resultado);
 
             return vectorSuma;
+        }
+        
+    }
+    public interface IRepositorioPersonas // una clase repositorio se encarga de la comunicacion con una BD
+    {
+        void ObtenerPersonas();
+    }
+
+    public class RepositorioPersonasDB : IRepositorioPersonas
+    {
+        public void ObtenerPersonas()
+        {
+            Console.WriteLine("Obteniendo personas en la base de datos");
+
+        }
+    }
+
+    public class RepositorioPersonasEnMemoria : IRepositorioPersonas
+    {
+        public void ObtenerPersonas()
+        {
+            Console.WriteLine("Obteniendo personas en la memoria");
+
         }
     }
 }
